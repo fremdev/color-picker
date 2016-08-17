@@ -1,10 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import Palette from './components/Palette';
+
 const App = React.createClass({
   render: function() {
     return (
-      <div>My app!</div>
+      <div>
+        <p>From App</p>
+        <Palette />
+      </div>
     )
   }
 });
