@@ -36,14 +36,11 @@ const Palette = React.createClass({
     this.state.colors.splice(colorNum, 1);
     this.setState({colors: this.state.colors});
   },
-  // updateBackground: function() {
-  //   document.getElementsByTagName('body')[0].style.backgroundColor = this.state.colors[this.state.selectedColor]
-  // },
   render: function() {
     return (
       <div className="palette">
         {this.state.colors.map(this.renderColors)}
-        <button className="palette__add-color" onClick={this.addColor}>Add Color</button>
+        <button className="btn palette__add-color" onClick={this.addColor}><div className="icon">+</div></button>
       </div>
     )
   }

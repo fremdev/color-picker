@@ -4,7 +4,9 @@ import {hexToRgb} from './../helpers';
 import './../styles/color.scss';
 
 import Clipboard from 'clipboard';
-var clipboard = new Clipboard('.btn-select');
+new Clipboard('.btn-select');
+new Clipboard('.color-picker__preview');
+
 
 const Color = React.createClass({
   getInitialState: function() {
@@ -30,7 +32,7 @@ const Color = React.createClass({
     const clipboardColor = (this.state.colorType === 'hex') ? hexColor : rgbColor;
     return (
       <div className={"color-picker" + this.props.stateClass} >
-        <div className="color-picker__preview" style={colorPreviewStyle} onClick={this.props.selectColor.bind(null, this.props.colorNum)}>
+        <div className="color-picker__preview" style={colorPreviewStyle} onClick={this.props.selectColor.bind(null, this.props.colorNum)} data-clipboard-text={clipboardColor}>
         </div>
         <div className="color-picker__info">
           <div className="color-picker__type">
@@ -43,10 +45,10 @@ const Color = React.createClass({
           </div>
           <div className="color-picker__buttons">
             <label className="color-picker__label btn">
-              Change Color
+              Change
               <input ref="pickedColor" className="color-picker__input btn" type="color" defaultValue={hexColor} onChange={this.changeColor} />
             </label>
-            <button data-clipboard-text={clipboardColor} className="btn btn-select" onClick={this.props.selectColor.bind(null, this.props.colorNum)}>Select color</button>
+            <button data-clipboard-text={clipboardColor} className="btn btn--select" onClick={this.props.selectColor.bind(null, this.props.colorNum)}>Select</button>
           </div>
         </div>
         <button className="btn btn--del" onClick={this.props.deleteColor.bind(null, this.props.colorNum)}>x</button>

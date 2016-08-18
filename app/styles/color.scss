@@ -6,14 +6,13 @@
   position: relative;
   height: 300px;
   margin-top: 20px;
-  padding: 15px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 15px;
 }
 
 .color-picker__info {
-  height: 100px;
-  p {
-    margin: 0;
-  }
+  margin-top: 20px;
 }
 
 .color-picker__preview {
@@ -21,12 +20,27 @@
   height: 200px;
   border-radius: 50%;
   margin: 0 auto;
+  cursor: pointer;
 }
 
 .color-picker__input {
   visibility: hidden;
   width: 0;
   height: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.color-picker__label {
+  position: relative;
+  flex: 1 1 50%;
+  margin-right: 5px;
+}
+
+.color-picker__buttons {
+  margin-top: 10px;
+  display: flex;
 }
 
 .btn {
@@ -34,10 +48,19 @@
   border: 1px solid #333;
   border-radius: 5px;
   text-align: center;
+  cursor: pointer;
+  background: rgba(#fff, 0.4);
 }
 
 .btn--del {
   position: absolute;
-  top: 5px;
-  right: 5px;
+  top: 10px;
+  right: 10px;
+  font-size: 28px;
+  padding: 5px;
+}
+
+.btn--select {
+  flex: 1 1 50%;
+  margin-left: 5px;
 }
