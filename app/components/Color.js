@@ -25,6 +25,7 @@ const Color = React.createClass({
           <label className="color-picker__label btn">Change Color<input ref="pickedColor" className="color-picker__input btn" type="color" defaultValue="#ffcccc" onChange={this.changeColor} /></label>
           <button className="btn" onClick={this.props.selectColor.bind(null, this.props.colorNum)}>Select color</button>
         </div>
+        <button className="btn btn--del" onClick={this.props.deleteColor.bind(null, this.props.colorNum)}>x</button>
       </div>
     )
   }

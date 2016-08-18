@@ -25,11 +25,15 @@ const Palette = React.createClass({
   },
   renderColors: function(color, index) {
     var stateClass = (this.state.selectedColor === index) ? ' color-picker--active' : '';
-    return <Color key={index} color={color} colorNum={index} selectColor={this.selectColor} changeColor={this.changeColor} stateClass={stateClass} />;
+    return <Color key={index} color={color} colorNum={index} selectColor={this.selectColor} changeColor={this.changeColor} stateClass={stateClass} deleteColor={this.deleteColor} />;
   },
   addColor: function() {
     const newColor = getRandomColor();
     this.state.colors.push(newColor);
+    this.setState({colors: this.state.colors});
+  },
+  deleteColor: function(colorNum) {
+    this.state.colors.splice(colorNum, 1);
     this.setState({colors: this.state.colors});
   },
   // updateBackground: function() {
