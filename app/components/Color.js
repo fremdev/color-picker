@@ -9,10 +9,15 @@ const Color = React.createClass({
     this.props.changeColor(pickedColor, colorNum);
   },
   render: function() {
+    var colorPreviewStyle = {
+      backgroundColor: this.props.color
+    }
     return (
-      <div>
-        <div><p>Color will be here {this.props.color}</p></div>
-        <label className="color-picker__label">Pick Color<input ref="pickedColor" className="color-picker__input" type="color" defaultValue="#ffcccc" onChange={this.changeColor} /></label>
+      <div className={"color-picker" + this.props.stateClass} >
+        <div className="color-picker__info" style={colorPreviewStyle}>
+          <p>Color will be here {this.props.color}</p>
+        </div>
+        <label className="color-picker__label">Change Color<input ref="pickedColor" className="color-picker__input" type="color" defaultValue="#ffcccc" onChange={this.changeColor} /></label>
         <button onClick={this.props.selectColor.bind(null, this.props.colorNum)}>Select color</button>
       </div>
     )
