@@ -1,0 +1,12 @@
+.color-picker__input {
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+.color-picker__label {
+  padding: 10px;
+  border: 1px solid #333;
+  border-radius: 5px;
+  text-align: center;
+}
