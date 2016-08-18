@@ -1,10 +1,34 @@
+.color-picker--active {
+  background-color: #ccffff;
+}
+
+.color-picker {
+  height: 300px;
+  margin-top: 20px;
+  padding: 15px;
+}
+
+.color-picker__info {
+  height: 100px;
+  p {
+    margin: 0;
+  }
+}
+
+.color-picker__preview {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
 .color-picker__input {
   visibility: hidden;
   width: 0;
   height: 0;
 }
 
-.color-picker__label {
+.btn {
   padding: 10px;
   border: 1px solid #333;
   border-radius: 5px;

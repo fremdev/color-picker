@@ -1,0 +1,13 @@
+.palette {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.palette__add-color {
+  margin-top: 20px;
+  background-color: #aaffff;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+}

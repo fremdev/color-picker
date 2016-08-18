@@ -1,5 +1,6 @@
 import React from 'react';
 
+import {hexToRgb} from './../helpers';
 import './../styles/color.scss';
 
 const Color = React.createClass({
@@ -12,13 +13,18 @@ const Color = React.createClass({
     var colorPreviewStyle = {
       backgroundColor: this.props.color
     }
+    const hexColor = this.props.color;
+    const rgbColor = hexToRgb(hexColor.slice(1));
     return (
       <div className={"color-picker" + this.props.stateClass} >
-        <div className="color-picker__info" style={colorPreviewStyle}>
-          <p>Color will be here {this.props.color}</p>
+        <div className="color-picker__preview" style={colorPreviewStyle}>
         </div>
-        <label className="color-picker__label">Change Color<input ref="pickedColor" className="color-picker__input" type="color" defaultValue="#ffcccc" onChange={this.changeColor} /></label>
-        <button onClick={this.props.selectColor.bind(null, this.props.colorNum)}>Select color</button>
+        <div className="color-picker__info">
+          <p>Hex color: {hexColor}</p>
+          <p>RGB color: {rgbColor}</p>
+          <label className="color-picker__label btn">Change Color<input ref="pickedColor" className="color-picker__input btn" type="color" defaultValue="#ffcccc" onChange={this.changeColor} /></label>
+          <button className="btn" onClick={this.props.selectColor.bind(null, this.props.colorNum)}>Select color</button>
+        </div>
       </div>
     )
   }

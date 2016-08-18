@@ -1,7 +1,10 @@
 import React from 'react';
-const colors = ['#ffaaaa', '#ffffff', '#0000ff'];
+const colors = ['#ffaaaa', '#ffccff', '#0000ff'];
+
 
 import Color from './Color';
+import getRandomColor from './../helpers';
+import './../styles/palette.scss';
 
 const Palette = React.createClass({
   getInitialState: function() {
@@ -21,16 +24,22 @@ const Palette = React.createClass({
     this.setState({colors: this.state.colors, selectedColor: colorNum});
   },
   renderColors: function(color, index) {
-    var stateClass = (this.state.selectedColor === index) ? ' active' : '';
+    var stateClass = (this.state.selectedColor === index) ? ' color-picker--active' : '';
     return <Color key={index} color={color} colorNum={index} selectColor={this.selectColor} changeColor={this.changeColor} stateClass={stateClass} />;
+  },
+  addColor: function() {
+    const newColor = getRandomColor();
+    this.state.colors.push(newColor);
+    this.setState({colors: this.state.colors});
   },
   // updateBackground: function() {
   //   document.getElementsByTagName('body')[0].style.backgroundColor = this.state.colors[this.state.selectedColor]
   // },
   render: function() {
     return (
-      <div>{this.state.colors.map(this.renderColors)}
-
+      <div className="palette">
+        {this.state.colors.map(this.renderColors)}
+        <button className="palette__add-color" onClick={this.addColor}>Add Color</button>
       </div>
     )
   }
