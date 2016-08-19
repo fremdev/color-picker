@@ -22,6 +22,9 @@ const Color = React.createClass({
   handleColorTypeChange: function(e) {
     this.setState({colorType: e.currentTarget.value});
   },
+  handleColorClick: function() {
+    this.props.selectColor(this.props.colorNum);
+  },
   render: function() {
     var colorPreviewStyle = {
       backgroundColor: this.props.color
@@ -32,7 +35,7 @@ const Color = React.createClass({
     const clipboardColor = (this.state.colorType === 'hex') ? hexColor : rgbColor;
     return (
       <div className={"color-picker" + this.props.stateClass} >
-        <div className="color-picker__preview" style={colorPreviewStyle} onClick={this.props.selectColor.bind(null, this.props.colorNum)} data-clipboard-text={clipboardColor}>
+        <div className="color-picker__preview" style={colorPreviewStyle} onClick={this.handleColorClick} data-clipboard-text={clipboardColor}>
         </div>
         <div className="color-picker__info">
           <div className="color-picker__type">
@@ -48,7 +51,7 @@ const Color = React.createClass({
               Change
               <input ref="pickedColor" className="color-picker__input btn" type="color" defaultValue={hexColor} onChange={this.changeColor} />
             </label>
-            <button data-clipboard-text={clipboardColor} className="btn btn--select" onClick={this.props.selectColor.bind(null, this.props.colorNum)}>Select</button>
+            <button data-clipboard-text={clipboardColor} className="btn btn--select" onClick={this.handleColorClick}>Select</button>
           </div>
         </div>
         <button className="btn btn--del" onClick={this.props.deleteColor.bind(null, this.props.colorNum)}>x</button>

@@ -1,14 +1,15 @@
-.color-picker--active {
-  background-color: #ccffff;
-}
-
 .color-picker {
   position: relative;
   height: 300px;
-  margin-top: 20px;
+  margin: 20px 5px 0;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 15px;
+  background-color: #fff;
+}
+
+.color-picker--active {
+  background-color: #bbc8d8;
 }
 
 .color-picker__info {
@@ -34,8 +35,9 @@
 
 .color-picker__label {
   position: relative;
-  flex: 1 1 50%;
+  flex: 1 1 0px;
   margin-right: 5px;
+  font-size: 16px;
 }
 
 .color-picker__buttons {
@@ -50,6 +52,8 @@
   text-align: center;
   cursor: pointer;
   background: rgba(#fff, 0.4);
+  background: #5588A3;
+  color: #fff;
 }
 
 .btn--del {
@@ -57,10 +61,11 @@
   top: 10px;
   right: 10px;
   font-size: 28px;
-  padding: 5px;
+  padding: 0px 5px 5px;
 }
 
 .btn--select {
-  flex: 1 1 50%;
+  flex: 1 1 0px;
   margin-left: 5px;
+  font-size: 16px;
 }
