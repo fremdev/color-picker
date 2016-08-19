@@ -1,7 +1,7 @@
 import React from 'react';
-const colors = ['#ffaaaa', '#ffccff', '#0000ff'];
+import CSSTransitionGroup from 'react-addons-css-transition-group';
 
-
+import colors from './../colors';
 import Color from './Color';
 import getRandomColor from './../helpers';
 import './../styles/palette.scss';
@@ -38,10 +38,15 @@ const Palette = React.createClass({
   },
   render: function() {
     return (
-      <div className="palette">
+      <CSSTransitionGroup
+        className="palette"
+        component="div"
+        transitionName="palette"
+        transitionEnterTimeout={500}
+        transitionLeaveTimeout={100}>
         {this.state.colors.map(this.renderColors)}
         <button className="btn palette__add-color" onClick={this.addColor}><div className="icon">+</div></button>
-      </div>
+      </CSSTransitionGroup>
     )
   }
 });

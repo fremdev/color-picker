@@ -6,9 +6,12 @@ const Header = React.createClass({
   render: function() {
     return (
       <div className="header">
-        <h1 className="header__title">Color Palette</h1>
+        <div className="title-block">
+          <h1 className="title-block__title">Color Palette</h1>
+          <div className="title-block__author"><a href="https://twitter.com/fremdev">by fremdev</a></div>
+        </div>
         <div className="header__info">
-          <p>Click on color or Select to copy color value</p>
+          <p>Click on a color or Select to copy color value</p>
           <p>Change color type with radiobuttons</p>
           <p>Change color value with Change button</p>
           <p>Add more colors and remove colors</p>

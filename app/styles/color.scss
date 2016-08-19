@@ -54,6 +54,10 @@
   background: rgba(#fff, 0.4);
   background: #5588A3;
   color: #fff;
+  transition: background 0.5s;
+  &:hover {
+    background: #1fcfcb;
+  }
 }
 
 .btn--del {

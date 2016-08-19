@@ -9,7 +9,11 @@
   padding: 15px 0;
 }
 
-.header__title {
+.title-block {
+  position: relative;
+}
+
+.title-block__title {
   flex: 1 0 auto;
   margin: 0 20px;
   color: #fff;
@@ -18,6 +22,21 @@
   font-weight: 700;
   line-height: 72px;
   letter-spacing: -1px;
+}
+
+.title-block__author {
+  position: absolute;
+  top: 5px;
+  right: 35px;
+  & a {
+    color: #fff;
+    font-style: italic;
+    text-decoration: none;
+    transition: color 0.5s;
+    &:hover {
+      color:#1fcfcb;
+    }
+  }
 }
 
 .header__info {
@@ -40,8 +59,9 @@ p {
 	margin-bottom: 36px;
 }
 
+
 @media (max-width: 812px) {
-  .header__title {
+  .title-block__title {
     text-align: center;
     margin-bottom: 15px;
   }
