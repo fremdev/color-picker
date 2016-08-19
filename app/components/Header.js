@@ -12,7 +12,7 @@ const Header = React.createClass({
         </div>
         <div className="header__info">
           <p>• Click on a color or Select to copy color value</p>
-          <p>• Change color type with radiobuttons</p>
+          <p>• Change color type with radio buttons</p>
           <p>• Change color value with Change button</p>
           <p>• Add more colors and remove colors</p>
         </div>

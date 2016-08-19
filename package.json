@@ -1,7 +1,7 @@
 {
   "name": "palette",
   "version": "1.0.0",
-  "description": "Build a Palette - app for easy handling colors for web-development - using React.js",
+  "description": "Palette - app for easy handling colors for web-development - using React.js",
   "main": "index.js",
   "scripts": {
     "build": "webpack",
