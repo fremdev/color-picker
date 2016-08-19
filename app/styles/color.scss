@@ -1,15 +1,16 @@
 .color-picker {
   position: relative;
   height: 300px;
-  margin: 20px 5px 0;
+  margin: 0px 5px 20px;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 15px;
   background-color: #fff;
+  box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.5);
 }
 
 .color-picker--active {
-  background-color: #bbc8d8;
+  background-color: #C1EAF2;
 }
 
 .color-picker__info {
@@ -51,7 +52,6 @@
   border-radius: 5px;
   text-align: center;
   cursor: pointer;
-  background: rgba(#fff, 0.4);
   background: #5588A3;
   color: #fff;
   transition: background 0.5s;

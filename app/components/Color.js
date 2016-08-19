@@ -4,7 +4,7 @@ import {hexToRgb} from './../helpers';
 import './../styles/color.scss';
 
 import Clipboard from 'clipboard';
-new Clipboard('.btn-select');
+new Clipboard('.btn--select');
 new Clipboard('.color-picker__preview');
 
 
